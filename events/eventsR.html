@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Events</title>
+  <style>
+
+body {
+        margin:0;
+        padding:0;
+        background-image: url("bgeventf.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+        background-position: center;
+        overflow: hidden;
+}
+    
+    @media (max-width: 989px) {
+    
+        body {
+            overflow:scroll;
+        }
+    }
+    
+    .something { 
+        width: 50px; 
+        height: 50px; 
+        display: block; 
+    } 
+    .something:hover{
+        animation-play-state: paused;
+    }
+
+    #btn-1 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -54%;
+        animation: rot_1 20s infinite linear;
+    }
+
+    @keyframes rot_1 { 
+        0% { 
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg); 
+        } 
+
+        100% { 
+            transform: rotate(-360deg)  
+                translateX(300px) rotate(360deg); 
+        } 
+    }
+
+    #btn-2 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_2 20s infinite linear;
+    }
+
+     
+    @keyframes rot_2 { 
+        0% { 
+            transform: rotate(180deg)  
+                translateX(300px) rotate(-180deg); 
+        } 
+
+        50% {
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg);
+        }
+
+        100% { 
+            transform: rotate(-180deg)  
+                translateX(300px) rotate(180deg); 
+        } 
+    } 
+
+    #btn-3 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_3 20s infinite linear;
+    }
+
+    @keyframes rot_3 { 
+        0% { 
+            transform: rotate(90deg)  
+                translateX(300px) rotate(-90deg); 
+        } 
+
+        25% {
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg);
+        }
+
+        100% { 
+            transform: rotate(-270deg)  
+                translateX(300px) rotate(270deg); 
+        }
+    }
+
+    #btn-4 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_4 20s infinite linear; 
+    }
+
+     
+    @keyframes rot_4 { 
+        0% { 
+            transform: rotate(270deg)  
+                translateX(300px) rotate(-270deg); 
+        } 
+
+        75% {
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg);
+        }
+
+        100% { 
+            transform: rotate(-90deg)  
+                translateX(300px) rotate(90deg); 
+        } 
+    } 
+
+    #btn-5 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_5 20s infinite linear;
+    }
+
+    @keyframes rot_5 { 
+        0% { 
+            transform: rotate(30deg)  
+                translateX(300px) rotate(-30deg); 
+        } 
+        50% {
+            transform: rotate(-150deg)  
+                translateX(300px) rotate(150deg); 
+        }
+
+        100% { 
+            transform: rotate(-330deg)  
+                translateX(300px) rotate(330deg); 
+        } 
+    }
+    
+
+    #btn-6 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_6 20s infinite linear;
+    }
+
+     
+    @keyframes rot_6 { 
+        0% { 
+            transform: rotate(60deg)  
+                translateX(300px) rotate(-60deg); 
+        } 
+
+        50% {
+            transform: rotate(-120deg)  
+                translateX(300px) rotate(120deg);
+        }
+
+        100% { 
+            transform: rotate(-300deg)  
+                translateX(300px) rotate(300deg); 
+        } 
+    } 
+    
+
+    #btn-7 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_7 20s infinite linear;
+    }
+
+    @keyframes rot_7 { 
+        0% { 
+            transform: rotate(120deg)  
+                translateX(300px) rotate(-120deg); 
+        } 
+
+        50% {
+            transform: rotate(-60deg)  
+                translateX(300px) rotate(60deg);
+        }
+
+        100% { 
+            transform: rotate(-240deg)  
+                translateX(300px) rotate(240deg); 
+        } 
+    }
+    
+
+    #btn-8 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.7%;
+       animation: rot_8 20s infinite linear; 
+    }
+
+     
+    @keyframes rot_8 { 
+        0% { 
+            transform: rotate(150deg)  
+                translateX(300px) rotate(-150deg); 
+        } 
+
+        50% {
+            transform: rotate(-30deg)  
+                translateX(300px) rotate(30deg);
+        }
+
+        100% { 
+            transform: rotate(-210deg)  
+                translateX(300px) rotate(210deg); 
+        } 
+    } 
+    
+
+    #btn-9 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_9 20s infinite linear;
+    }
+
+    @keyframes rot_9 { 
+        0% { 
+            transform: rotate(210deg)  
+                translateX(300px) rotate(-210deg); 
+        } 
+
+        50% {
+            transform: rotate(30deg)  
+                translateX(300px) rotate(-30deg);
+        }
+
+        100% { 
+            transform: rotate(-150deg)  
+                translateX(300px) rotate(150deg); 
+        } 
+    }
+
+    #btn-10 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+       animation: rot_10 20s infinite linear; 
+    }
+
+     
+    @keyframes rot_10 { 
+        0% { 
+            transform: rotate(240deg)  
+                translateX(300px) rotate(-240deg); 
+        } 
+
+        50% {
+            transform: rotate(60deg)  
+                translateX(300px) rotate(-60deg);
+        }
+
+        100% { 
+            transform: rotate(-120deg)  
+                translateX(300px) rotate(120deg); 
+        } 
+    } 
+
+    #btn-11 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_11 20s infinite linear;
+    }
+
+    @keyframes rot_11 { 
+        0% { 
+            transform: rotate(300deg)  
+                translateX(300px) rotate(-300deg); 
+        } 
+
+        50% {
+            transform: rotate(120deg)  
+                translateX(300px) rotate(-120deg);
+        }
+
+        100% { 
+            transform: rotate(-60deg)  
+                translateX(300px) rotate(60deg); 
+        } 
+    }
+
+    #btn-12 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -7%;
+        animation: rot_12 20s infinite linear;
+    }
+
+     
+    @keyframes rot_12 { 
+        0% { 
+            transform: rotate(330deg)  
+                translateX(300px) rotate(-330deg); 
+        } 
+
+        50% {
+            transform: rotate(150deg)  
+                translateX(300px) rotate(-150deg);
+        }
+
+        100% { 
+            transform: rotate(-30deg)  
+                translateX(300px) rotate(30deg); 
+        } 
+    } 
+   
+    #btn-13 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -54%;
+        animation: rot_13 20s infinite linear;
+    }
+
+    @keyframes rot_13 { 
+        100% { 
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg); 
+        } 
+
+        0% { 
+            transform: rotate(-360deg)  
+                translateX(300px) rotate(360deg); 
+        } 
+    }
+
+    #btn-14 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_14 20s infinite linear;
+    }
+
+     
+    @keyframes rot_14 { 
+        100% { 
+            transform: rotate(180deg)  
+                translateX(300px) rotate(-180deg); 
+        } 
+
+        50% {
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg);
+        }
+
+        0% { 
+            transform: rotate(-180deg)  
+                translateX(300px) rotate(180deg); 
+        } 
+    } 
+
+    #btn-15 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_15 20s infinite linear;
+    }
+
+    @keyframes rot_15 { 
+        100% { 
+            transform: rotate(90deg)  
+                translateX(300px) rotate(-90deg); 
+        } 
+
+        75% {
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg);
+        }
+
+        0% { 
+            transform: rotate(-270deg)  
+                translateX(300px) rotate(270deg); 
+        }
+    }
+
+    #btn-16 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_16 20s infinite linear; 
+    }
+
+     
+    @keyframes rot_16 { 
+        100% { 
+            transform: rotate(270deg)  
+                translateX(300px) rotate(-270deg); 
+        } 
+
+        25% {
+            transform: rotate(0deg)  
+                translateX(300px) rotate(0deg);
+        }
+
+        0% { 
+            transform: rotate(-90deg)  
+                translateX(300px) rotate(90deg); 
+        } 
+    } 
+
+    #btn-17 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_17 20s infinite linear;
+    }
+
+    @keyframes rot_17 { 
+        100% { 
+            transform: rotate(30deg)  
+                translateX(300px) rotate(-30deg); 
+        } 
+        50% {
+            transform: rotate(-150deg)  
+                translateX(300px) rotate(150deg); 
+        }
+
+        0% { 
+            transform: rotate(-330deg)  
+                translateX(300px) rotate(330deg); 
+        } 
+    }
+    
+
+    #btn-18 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_18 20s infinite linear;
+    }
+
+     
+    @keyframes rot_18 { 
+        100% { 
+            transform: rotate(60deg)  
+                translateX(300px) rotate(-60deg); 
+        } 
+
+        50% {
+            transform: rotate(-120deg)  
+                translateX(300px) rotate(120deg);
+        }
+
+        0% { 
+            transform: rotate(-300deg)  
+                translateX(300px) rotate(300deg); 
+        } 
+    } 
+    
+
+    #btn-19 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_19 20s infinite linear;
+    }
+
+    @keyframes rot_19 { 
+        100% { 
+            transform: rotate(120deg)  
+                translateX(300px) rotate(-120deg); 
+        } 
+
+        50% {
+            transform: rotate(-60deg)  
+                translateX(300px) rotate(60deg);
+        }
+
+        0% { 
+            transform: rotate(-240deg)  
+                translateX(300px) rotate(240deg); 
+        } 
+    }
+    
+
+    #btn-20 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.7%;
+       animation: rot_20 20s infinite linear; 
+    }
+
+     
+    @keyframes rot_20 { 
+        100% { 
+            transform: rotate(150deg)  
+                translateX(300px) rotate(-150deg); 
+        } 
+
+        50% {
+            transform: rotate(-30deg)  
+                translateX(300px) rotate(30deg);
+        }
+
+        0% { 
+            transform: rotate(-210deg)  
+                translateX(300px) rotate(210deg); 
+        } 
+    } 
+    
+
+    #btn-21 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_21 20s infinite linear;
+    }
+
+    @keyframes rot_21 { 
+        100% { 
+            transform: rotate(210deg)  
+                translateX(300px) rotate(-210deg); 
+        } 
+
+        50% {
+            transform: rotate(30deg)  
+                translateX(300px) rotate(-30deg);
+        }
+
+        0% { 
+            transform: rotate(-150deg)  
+                translateX(300px) rotate(150deg); 
+        } 
+    }
+
+    #btn-22 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+       animation: rot_22 20s infinite linear; 
+    }
+
+     
+    @keyframes rot_22 { 
+        100% { 
+            transform: rotate(240deg)  
+                translateX(300px) rotate(-240deg); 
+        } 
+
+        50% {
+            transform: rotate(60deg)  
+                translateX(300px) rotate(-60deg);
+        }
+
+        0% { 
+            transform: rotate(-120deg)  
+                translateX(300px) rotate(120deg); 
+        } 
+    } 
+
+    #btn-23 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        animation: rot_23 20s infinite linear;
+    }
+
+    @keyframes rot_23 { 
+        100% { 
+            transform: rotate(300deg)  
+                translateX(300px) rotate(-300deg); 
+        } 
+
+        50% {
+            transform: rotate(120deg)  
+                translateX(300px) rotate(-120deg);
+        }
+
+        0% { 
+            transform: rotate(-60deg)  
+                translateX(300px) rotate(60deg); 
+        } 
+    }
+
+    #btn-24 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -7%;
+        animation: rot_24 20s infinite linear;
+    }
+
+     
+    @keyframes rot_24 { 
+        100% { 
+            transform: rotate(330deg)  
+                translateX(300px) rotate(-330deg); 
+        } 
+
+        50% {
+            transform: rotate(150deg)  
+                translateX(300px) rotate(-150deg);
+        }
+
+        0% { 
+            transform: rotate(-30deg)  
+                translateX(300px) rotate(30deg); 
+        } 
+    } 
+
+    #btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover, #btn-5:hover, #btn-6:hover, #btn-7:hover, #btn-8:hover, #btn-9:hover, #btn-10:hover, #btn-11:hover, #btn-12:hover ~ .something{ 
+        animation-play-state: paused;
+    }
+.container2:hover{
+    animation-play-state: paused;
+}
+  </style>
+<script>
+  /*  const elementToHover = document.getElementById('btn-1');
+    elementToHover.addEventListener('mouseover',handleHover);
+
+    function handleHover(event) {
+  const targetElement = event.currentTarget targetElement.style.animation = 'none';
+  // or
+  targetElement.style.removeProperty('animation');
+}
+
+function handleHover(event) {
+    const targetElement = event.currentTarget;
+    targetElement.style.animation = 'none';
+  
+    targetElement.addEventListener('mouseout', handleMouseOut);
+  }
+  
+  function handleMouseOut(event) {
+    const targetElement = event.currentTarget;
+    targetElement.style.removeProperty('animation');
+    targetElement.removeEventListener('mouseout', handleMouseOut);
+  }*/</script>
+  
+</head>
+<body>
+    <script>
+        // Get all elements with the class "tagline"
+    const taglines = gsap.utils.toArray(".tagline");
+    
+    // Add event listener to each element
+    taglines.forEach((tagline) => {
+      tagline.addEventListener("mouseenter", () => {
+        // Pause all animations on hover
+        taglines.forEach((otherTagline) => {
+          otherTagline.style.animationPlayState = "paused";
+        });
+      });
+    
+      tagline.addEventListener("mouseleave", () => {
+        // Resume all animations on mouse leave
+        taglines.forEach((otherTagline) => {
+          otherTagline.style.animationPlayState = "running";
+      });
+    });
+    });
+      </script>
+    <div style="height: 100vh;" class="row">
+
+    <div class="container1 col-lg-6">
+        <img src="clocklogo2.gif" class=" img-fluid mx-auto d-block rounded-circle" style="padding: 25%;">
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-1"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Tango.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Tango</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-2"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Jukebox.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover."> Bosco Jukebox</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-3"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Solstice.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Solstice</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-4"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Blitz.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Blitz</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-5"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Quirkify.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Quirkify</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-6"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Tribunal.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Tribunal</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-7"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Conundrum.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Conundrum</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-8"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Reverie.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Reverie</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-9"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Premiere.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Premiere</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-10"><button class="btn btn-dark" onclick="document.location='eventsseppg/Encode.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Encode</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-11"><button class="btn btn-dark" onclick="document.location='eventsseppg/SangeetSaga.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Sangeet Saga</button></div>
+        <div style="font-size: 30px;" class="tagline" class="something" id="btn-12"><button class="btn btn-dark" onclick="document.location='eventsseppg/Rangmanch.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Rangmanch</button></div>
+    </div>
+    <div class="container2 col-lg-6">
+        <img src="clocklogo1.gif" class=" img-fluid mx-auto d-block rounded-circle "style="padding: 25%;">
+        <div style="font-size: 30px;" class="something2" id="btn-13"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Syncpit.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Syncpit</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-14"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Fresco.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Fresco</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-15"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Shatranj.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Shatranj</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-16"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Prototype.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Prototype</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-17"><button class="btn btn-dark"  onclick="document.location='eventsseppg/whiffwhaff.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Whiff Whaff -TT</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-18"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Brainchild.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Brainchild</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-19"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Maverick.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Maverick</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-20"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Columinist.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Columinist</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-21"><button class="btn btn-dark"  onclick="document.location='eventsseppg/Raag.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Raag</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-22"><button class="btn btn-dark" onclick="document.location='eventsseppg/Nritya.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Nritya</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-23"><button class="btn btn-dark" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Beat</button></div>
+        <div style="font-size: 30px;" class="something2" id="btn-24"><button class="btn btn-dark" onclick="document.location='eventsseppg/Controvert.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Bosco Controvert</button></div>
+    </div>
+    
+</div>
+    
+</body>
+</html>

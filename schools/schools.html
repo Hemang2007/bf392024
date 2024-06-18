@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schools</title>
+    <link rel="stylesheet" href= 
+"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> 
+<script src= 
+"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> 
+      </script> 
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .button-container {
+            position: relative;
+            width: 1000px;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0;
+            animation: rotate 80s linear infinite;
+        }
+
+        .button {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s, width 0.3s, height 0.3s;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .button:nth-child(1) { transform: rotate(36deg) translateX(350px); }
+        .button:nth-child(2) { transform: rotate(72deg) translateX(350px); }
+        .button:nth-child(3) { transform: rotate(108deg) translateX(350px); }
+        .button:nth-child(4) { transform: rotate(144deg) translateX(350px); }
+        .button:nth-child(5) { transform: rotate(180deg) translateX(350px); }
+        .button:nth-child(6) { transform: rotate(216deg) translateX(350px); }
+        .button:nth-child(7) { transform: rotate(252deg) translateX(350px); }
+        .button:nth-child(8) { transform: rotate(288deg) translateX(350px); }
+        .button:nth-child(9) { transform: rotate(324deg) translateX(350px); }
+        .button:nth-child(10) { transform: rotate(360deg) translateX(350px); }
+
+        .button:nth-child(11) { transform: rotate(-40deg) translateX(450px); }
+        .button:nth-child(12) { transform: rotate(-80deg) translateX(450px); }
+        .button:nth-child(13) { transform: rotate(-120deg) translateX(450px); }
+        .button:nth-child(14) { transform: rotate(-160deg) translateX(450px); }
+        .button:nth-child(15) { transform: rotate(-200deg) translateX(450px); }
+        .button:nth-child(16) { transform: rotate(-240deg) translateX(450px); }
+        .button:nth-child(17) { transform: rotate(-280deg) translateX(450px); }
+        .button:nth-child(18) { transform: rotate(-320deg) translateX(450px); }
+        .button:nth-child(19) { transform: rotate(-360deg) translateX(450px); }
+
+
+        .button:nth-child(1) img { transform: rotate(-36deg); }
+        .button:nth-child(2) img { transform: rotate(-72deg); }
+        .button:nth-child(3) img { transform: rotate(-108deg); }
+        .button:nth-child(4) img { transform: rotate(-144deg); }
+        .button:nth-child(5) img { transform: rotate(-180deg); }
+        .button:nth-child(6) img { transform: rotate(-216deg); }
+        .button:nth-child(7) img { transform: rotate(-252deg); }
+        .button:nth-child(8) img { transform: rotate(-288deg); }
+        .button:nth-child(9) img { transform: rotate(-324deg); }
+        .button:nth-child(10) img { transform: rotate(-360deg); }
+
+        .button:nth-child(11) img { transform: rotate(40deg); }
+        .button:nth-child(12) img { transform: rotate(80deg); }
+        .button:nth-child(13) img { transform: rotate(120deg); }
+        .button:nth-child(14) img { transform: rotate(160deg); }
+        .button:nth-child(15) img { transform: rotate(200deg); }
+        .button:nth-child(16) img { transform: rotate(240deg); }
+        .button:nth-child(17) img { transform: rotate(280deg); }
+        .button:nth-child(18) img { transform: rotate(320deg); }
+        .button:nth-child(19) img { transform: rotate(360deg); }
+
+        .center-image {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            z-index: 1;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: -40px; /* Adjust this value to position the tooltip */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: gray;
+            color: white;
+            border-radius: 5px;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s;
+            z-index: 10;
+        }
+
+        .button:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .button:hover {
+            width: 100px;
+            height: 100px;
+        }
+
+        .center-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: gray;
+            color: white;
+            border-radius: 5px;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s;
+            z-index: 10;
+        }
+
+        .center-image-container:hover .center-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <script> 
+        let popoverTriggerList = [].slice.call( 
+            document.querySelectorAll('[data-bs-toggle="popover"]')) 
+          
+        let popoverList =  
+        popoverTriggerList.map(function (popoverTriggerEl) { 
+            return new bootstrap.Popover(popoverTriggerEl) 
+        }) 
+    </script> 
+    <div class="button-container">
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/auxi.png" alt="Auxi">
+            <span class="tooltip">Auxi Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/scis.png" alt="Scis">
+            <span class="tooltip">Scis Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/bsslogo.png" alt="Bss">
+            <span class="tooltip">Bss Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/dbb.png" alt="Dbb">
+            <span class="tooltip">Dbb Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/dbL.jpg" alt="Dbl">
+            <span class="tooltip">Dbl Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/dbpc logo.png" alt="Dbpc">
+            <span class="tooltip">Dbpc Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/lhslogo.png" alt="Lhs">
+            <span class="tooltip">Lhs Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/mhs.jpg" alt="Mhs">
+            <span class="tooltip">Mhs Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/mhsi.png" alt="Mhsi">
+            <span class="tooltip">Mhsi Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+            <img src="school logos/qmspc.png" alt="Qms">
+            <span class="tooltip">Qmspc Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/stp.jpg" alt="Stp">
+          <span class="tooltip">Stp Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/mbwa.png" alt="mbwa">
+          <span class="tooltip">Mbwa Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/cghs.png" alt="cghs">
+          <span class="tooltip">Cghs Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/ngs.svg" alt="ngs">
+          <span class="tooltip">Ngs Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/pratt.jpg" alt="pratt">
+          <span class="tooltip">Pratt Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/qmspc.png" alt="qmssl">
+          <span class="tooltip">Qmssl Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/xav.png" alt="xav">
+          <span class="tooltip">Xav Tooltip Text</span>
+        </a>
+        <a class="button btn" type="button"
+        data-bs-toggle="popover" data-bs-trigger="hover"
+        data-bs-placement="top" title="AUXI---------------"
+        data-bs-content="This is the content of the Top Popover.">
+          <img src="school logos/newtown.jpg" alt="newtown">
+          <span class="tooltip">Newtown Tooltip Text</span>
+        </a>
+    </div>
+    <img src="logo.png" alt="Center Image" class="center-image">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttonContainer = document.querySelector('.button-container');
+            const buttons = document.querySelectorAll('.button');
+
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', () => {
+                    buttonContainer.style.animationPlayState = 'paused';
+                });
+
+                button.addEventListener('mouseout', () => {
+                    buttonContainer.style.animationPlayState = 'running';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
