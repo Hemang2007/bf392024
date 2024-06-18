@@ -1,0 +1,407 @@
+<div class="container align-baseline" style="position:relative; margin-bottom:-270px" id="container_timer">
+      <div class="container-segment">
+        <div class="segment-title">Days</div>
+        <div class="segment">
+          <div class="flip-card" data-days-tens>
+            <div class="top">1</div>
+            <div class="bottom">1</div>
+          </div>
+          <div class="flip-card" data-days-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container-segment">
+        <div class="segment-title">Hours</div>
+        <div class="segment">
+          <div class="flip-card" data-hours-tens>
+            <div class="top">2</div>
+            <div class="bottom">2</div>
+          </div>
+          <div class="flip-card" data-hours-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-segment">
+        <div class="segment-title">Minutes</div>
+        <div class="segment">
+          <div class="flip-card" data-minutes-tens>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+          <div class="flip-card" data-minutes-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-segment">
+        <div class="segment-title">Seconds</div>
+        <div class="segment">
+          <div class="flip-card" data-seconds-tens>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+          <div class="flip-card" data-seconds-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  *, *::after, *::before {
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+  }
+  
+  body {
+    text-align: center;
+    color: white;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .flip-card {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+    border-radius: .1em;
+    opacity: 80%;
+  }
+  
+  .top,
+  .bottom,
+  .flip-card .top-flip,
+  .flip-card .bottom-flip {
+    height: .6em;
+    line-height: 1;
+    padding: .1em;
+    overflow: hidden;
+  }
+  
+  .top,
+  .flip-card .top-flip {
+    background-color: #000000;
+    border-top-right-radius: .1em;
+    border-top-left-radius: .1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .bottom,
+  .flip-card .bottom-flip {
+    background-color: #000000;
+    display: flex;
+    align-items: flex-end;
+    border-bottom-right-radius: .1em;
+    border-bottom-left-radius: .1em;
+  }
+  
+  .flip-card .top-flip {
+    position: absolute;
+    width: 100%;
+    animation: flip-top 250ms ease-in;
+    transform-origin: bottom;
+  }
+  
+  @keyframes flip-top {
+    100% {
+      transform: rotateX(90deg);
+    }
+  }
+  
+  .flip-card .bottom-flip {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    animation: flip-bottom 250ms ease-out 250ms;
+    transform-origin: top;
+    transform: rotateX(90deg);
+  }
+  
+  @keyframes flip-bottom {
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  
+  #container_timer {
+    color: white;
+    display: flex;
+    margin-top:240px;
+    margin-right: 20px;
+    gap: .5em;
+    justify-content: center;
+  }
+  
+  .container-segment {
+    display: flex;
+    flex-direction: column;
+    gap: .1em;
+    align-items: center;
+  }
+  
+  .segment {
+    display: flex;
+    gap: .1em;
+  }
+  
+  .segment-title {
+    font-size: 1rem;
+  }
+    
+  @media (max-width:600px){
+    body{
+      background-size: 850%;
+    }
+    
+  }
+
+.mobile {
+    color: blue;
+}
+
+.laptop {
+    color: green;
+}   
+.button {
+  display: block;
+  padding: 10px 20px;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  opacity: 80%;
+  display: inline-block;
+}
+
+.button:hover {
+  font-size: 30px;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.container.center-image {
+  position: relative;
+  margin-top: 50px;
+}
+
+.img-fluid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+.button1 { transform: rotate(0deg) translateX(250px) rotate(0deg); }
+.button2 { transform: rotate(90deg) translateX(250px) rotate(-90deg); }
+.button3 { transform: rotate(180deg) translate(250px) rotate(-180deg); }
+.button4 { transform: rotate(270deg) translateX(250px) rotate(-270deg); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJL3B6kR0h3rQ6C6aIAYslp5r5yIZp25iZ68m9L3E5e" crossorigin="anonymous"> 
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+  <!--<marquee style="height: 70px; background-color: black; width: 100%; color: white;">Hello</marquee>-->
+  <div style="height:1000px;">
+
+  </div>
+ 
+
+    <div class="container align-baseline" style="position:relative; margin-bottom:-270px" id="container_timer">
+      <div class="container-segment">
+        <div class="segment-title">Days</div>
+        <div class="segment">
+          <div class="flip-card" data-days-tens>
+            <div class="top">1</div>
+            <div class="bottom">1</div>
+          </div>
+          <div class="flip-card" data-days-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-segment">
+        <div class="segment-title">Hours</div>
+        <div class="segment">
+          <div class="flip-card" data-hours-tens>
+            <div class="top">2</div>
+            <div class="bottom">2</div>
+          </div>
+          <div class="flip-card" data-hours-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-segment">
+        <div class="segment-title">Minutes</div>
+        <div class="segment">
+          <div class="flip-card" data-minutes-tens>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+          <div class="flip-card" data-minutes-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-segment">
+        <div class="segment-title">Seconds</div>
+        <div class="segment">
+          <div class="flip-card" data-seconds-tens>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+          <div class="flip-card" data-seconds-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <title>Our team</title>
+  <style>
+    body {
+        background-image: url("bg.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        overflow: hidden;
+    }
+    .row{
+        color: white;
+    }
+  </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-3">Events</div>
+        <div class="col-sm-3">Venue</div>
+        <div class="col-sm-3">Time</div>
+      </div>
+</body>
+</html>

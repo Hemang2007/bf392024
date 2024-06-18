@@ -1,0 +1,154 @@
+<a href="#" class="button button1">Home</a>
+<a href="#" class="button button2">About</a>
+<a href="#" class="button button3">Schools</a>
+<a href="#" class="button button4">Schedule</a>
+<a href="#" class="button button5">Contact Us</a>
+<a href="#" class="button button6">Ask</a>
+<a href="#" class="button button7">Our Team</a>
+
+<style>
+
+    .button {
+        position: absolute;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        border-radius: 5px;
+        transition: font-size 0.3s;
+    }
+
+    .button:hover {
+        font-size: 110%;
+    }
+</style>
+<div class="button-container">
+            <a href="events.html" class="button button1">Events</a>
+            <a href="about.html" class="button button2">About</a>
+            <a href="schools.html" class="button button3">Schools</a>
+            <a href="schedule.html" class="button button4">Schedule</a>
+            <a href="contact.html" class="button button5">Contact Us</a>
+            <a href="ourteam.html" class="button button7">Our Team</a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        
+<body>
+  <!--<marquee style="height: 70px; background-color: black; width: 100%; color: white;">Hello</marquee>-->
+  <div class="container" id="main_container">
+  <div class="logo row container">
+    <div>
+    <img src="logo.png" width=400px; height=400px>
+  </div>
+    <div class="button-container1">
+        <a href="events.html" class="button button1">Events</a>
+    </div>
+    <div class="button-container2">
+        <a href="about.html" class="button button2">About</a>    
+    </div>
+    <div class="button-container3">
+        <a href="schools.html" class="button button3">Schools</a> 
+       </div>
+    <div class="button-container4">
+        <a href="schedule.html" class="button button4">Schedule</a>
+    </div>
+
+</div>
+    <div class="container align-baseline row" style="position:relative; margin-bottom:-270px" id="container_timer">\
+      <div class="container-segment">
+        <div class="segment-title">Days</div>
+        <div class="segment">
+          <div class="flip-card" data-days-tens>
+            <div class="top">1</div>
+            <div class="bottom">1</div>
+          </div>
+          <div class="flip-card" data-days-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-segment">
+        <div class="segment-title">Hours</div>
+        <div class="segment">
+          <div class="flip-card" data-hours-tens>
+            <div class="top">2</div>
+            <div class="bottom">2</div>
+          </div>
+          <div class="flip-card" data-hours-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-segment">
+        <div class="segment-title">Minutes</div>
+        <div class="segment">
+          <div class="flip-card" data-minutes-tens>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+          <div class="flip-card" data-minutes-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-segment">
+        <div class="segment-title">Seconds</div>
+        <div class="segment">
+          <div class="flip-card" data-seconds-tens>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+          <div class="flip-card" data-seconds-ones>
+            <div class="top">0</div>
+            <div class="bottom">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<!--<div class="content text-center" style="height: fit-content;">
+        <a href="#" class="center-image"><img src="logo.png" width="500px" height="500px" class="img-fluid mx-auto d-block"></a>-->
+          <!--div style="display: flex-end;margin-top: 50px; justify-content: center;"-->
+          <div class="col-lg-3 col-md-3" style="margin-top: -30px;">  </div>
+          <div class="col-lg-2 col-md-3" style="margin-top: -30px;">
+            <div><a href="events/eventcf.html" class="btn btn-custom"
+              ><b>EVENTS</b></a></div><br><br>
+            <div><a href="schools/schools.html" class="btn btn-custom"
+              ><b>SCHOOLS</b></a></div>
+              </div>
+              <div class="col-lg-2 col-md-3" style="margin-top: -30px;">  </div>
+              <div class="col-lg-3 col-md-3" style="margin-top: -30px; ">
+                <div class="mt-4">
+                  <p class="text-white" style="margin-left: 30px;">
+                    <a href="schedule.html" class="btn btn-custom"><b>SCHEDULE</b></a>
+                  </p>
+                  <p class="text-white" style="margin-left: 30px;">
+                    <a href="about.html" class="btn btn-custom"><b>ABOUT US</b></a>
+                  </p>
+            
+            <br>
+            
+          
+        </div>
+      </div>

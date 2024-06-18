@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Schedule</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-D9XvGPo27Umt7moK48bWfLbG0cQ77MJk9PV1MOvY6rgXC2BV1TW1Oz7YRRhz4A//7aITgh0vS+9ZOD/q6A7BFw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+  <script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD-x-8DnD5gK6SdrcHsETjSH9MTj_nQ_wg",
+      authDomain: "boscofeast.firebaseapp.com",
+      projectId: "boscofeast",
+      storageBucket: "boscofeast.appspot.com",
+      messagingSenderId: "140906558190",
+      appId: "1:140906558190:web:5ce4256e5ec7229625b9ff",
+      measurementId: "G-Y589VJ9K6S"
+    };
+    
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+    // Function to fetch and display data
+    function fetchData() {
+      const database = firebase.database();
+      const ref = database.ref('Event');
+
+      ref.get().then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          displayData(data);
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+    }
+    function displayData(data) {
+      const tableBody = document.getElementById('table-body');
+      tableBody.innerHTML = '';
+      console.log(data);
+      for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+
+          const rowData = data[key];
+
+          const row = `<tr>
+                  <td>${rowData.event}</td>
+                  <td>${rowData.venue}</td>
+                  <td>${rowData.time}</td>
+                </tr>`;
+          tableBody.innerHTML += row;
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image:url("schedule.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+
+    }
+
+    .bodywrapcenter {
+  background-color: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed 
+}
+
+.bodywrapcenter th,
+.bodywrapcenter td {
+  padding: 10px; /* Adjust padding as needed */
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust background color and opacity as needed */
+}
+
+
+
+table tr {
+    padding: 50px; 
+}
+
+
+    
+
+    #navbar {
+      overflow: hidden;
+      opacity: 95%;
+      transition: 0.3s;
+      position: fixed;
+      z-index: 3;
+      transition: 0.3s;
+      height: fit-content;
+      border-radius: 10px;
+    }
+
+    #navbar a {
+      float: left;
+      color: #888888;
+      opacity: 95%;
+      transition: 0.1s;
+      font-weight: bold;
+      font-size: 25px;
+      font-family: nunito;
+    }
+
+    #navbar a:hover {
+      color: white;
+      opacity: 90%;
+      cursor: pointer;
+      font-weight: bolder;
+    }
+
+    a.nav_link {
+      font-family: nunito;
+      font-size: 20px
+    }
+
+    img.logo {
+      padding: 1px 1px;
+      width: 50px
+    }
+
+    .footer .btn.btn-link {
+      display: block;
+      margin-bottom: 5px;
+      padding: 0;
+      text-align: left;
+      color: var(--light);
+      font-weight: normal;
+      text-transform: capitalize;
+      transition: .3s;
+    }
+
+    .footer .btn.btn-link::before {
+      position: relative;
+      content: "\f105";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .footer .btn.btn-link:hover {
+      color: var(--primary);
+      letter-spacing: 1px;
+      box-shadow: none;
+    }
+
+    .copyright {
+      color: var(--light);
+      background: #000B1C;
+    }
+
+    .copyright a {
+      color: var(--light);
+    }
+
+    .copyright a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body onload="fetchData()">
+  <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark w-100 text-center">
+    <div class="me-auto">
+      <a class="p-2 navbar-brand" href="/index.html"><img class="rounded logo" src="logo.png"></a>
+      <a class="p-3 nav-item nav-link" id="main_header" href="/index.html">BOSCO FEST</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mx-auto" id="collapsibleNavbar">
+      <a id="home" class="p-2 nav-item nav-link" href="/index.html">Home</a>
+      <a id="home" class="p-2 nav-item nav-link" href="/about.html">About Us</a>
+      <a id="menu" class="p-2 nav-item nav-link" href="events/eventcf.html">Events</a>
+      <a id="contact" class="p-2 nav-item nav-link" href="/schedule.html">Schedule</a>
+      <a id="contact" class="p-2 nav-item nav-link" href="schools/schools.html">Schools</a>
+
+    </div>
+  </nav>
+  <script>
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = `-${window.innerHeight / 5}px`;
+      }
+    }
+  </script>
+
+  <br><br><br><br><br><br>
+
+  <div class="container mt-3">
+    <style>
+      @media (max-width: 996px) {
+      body {
+        font-size: 24px;
+      }
+    }
+
+    </style>
+    <table class="bodywrapcenter" style="
+    width: 100%; 
+    table-layout: fixed; 
+    border-collapse: separate !important; 
+    border-spacing: 30px 40px; 
+    font-family: Helvetica, Arial, sans-serif; 
+    color: white; 
+    font-size: 16px; 
+    line-height: 32px; 
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background color for all cells */
+    margin: auto; /* Center the table */
+    text-align: center; /* Center-align text in the table */">
+     
+  <thead class="table-primary">
+    <tr>
+      <th style="background-color: rgba(255, 255, 255, 0.1);">Events</th>
+      <th style="background-color: rgba(255, 255, 255, 0.1);">Venue</th>
+      <th style="background-color: rgba(255, 255, 255, 0.1);">Time</th>
+    </tr>
+  </thead>
+  <tbody id="table-body">
+    <!-- Table rows will be dynamically added here -->
+  </tbody>
+</table>
+      <thead class="table-primary">
+        <!--<tr>
+          <th>EVENTS</th>
+          <th>VENUE</th>
+          <th>TIME</th>
+        </tr>-->
+      </thead>
+      <tbody id="table-body">
+        <!-- Table rows will be dynamically added here -->
+      </tbody>
+    </table>
+    
+    <!-- 
+    <tbody>
+      <tr>
+        <td>Tango</td>
+        <td>Auditorium</td>
+        <td>5:00pm</td>
+      </tr>
+    </tbody>
+  </table>
+  -->
+  </div>
+
+
+  <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5" >
+        <div class="col-lg-4 col-md-6" style="margin-top: -30px;"   >
+          <img class="img-fluid" width="370" height="370" src="logo.png"
+            class="attachment-large size-large wp-image-944" alt=""
+            sizes="(max-width: 800px) 100vw, 800px">
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-4">Contact us</h4>
+
+          <!-- Contact Information with Font Awesome Icons -->
+          <div class="mt-4">
+            <p class="text-white">
+              <i class="fas fa-phone-alt"></i> Phone: +91 33 2287-9202
+            </p>
+            <p class="text-white">
+              <i class="fas fa-envelope"></i> <a href="https://mail.google.com/mail/u/dbkolkata@gmail.com/#compose">dbkolkata@gmail.com</a> 
+            </p>
+            <p class="text-white">
+              <i class="fas fa-map-marker-alt"></i> Address: 
+            </p>
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="text-white mb-4">Social Media</h4>
+          <!-- <h4 class="text-white mb-4">Social Media</h4>
+              <a class="btn btn-link" href="">About Us</a>
+              <a class="btn btn-link" href="">Contact Us</a>
+              <a class="btn btn-link" href="">Our Services</a>
+              <a class="btn btn-link" href="">Terms & Condition</a>
+              <a class="btn btn-link" href="">Support</a>-->
+          <style>
+            .elementor-icon-list-icon {
+              font-size: 24px;
+              /* Adjust the font-size as needed */
+              margin-right: 10px;
+              /* Optional: Adjust spacing between icon and text */
+            }
+          </style>
+
+          <style>
+            .elementor-icon-list-icon {
+              color: white;
+              /* Set icon color to white */
+              font-size: 24px;
+              /* Adjust icon size as needed */
+              margin-right: 10px;
+              /* Optional: Adjust spacing between icon and text */
+            }
+
+            .elementor-icon-list-text {
+              color: white;
+              /* Set text color to white */
+            }
+          </style>
+
+          <style>
+            .elementor-icon-list-item a {
+              text-decoration: none;
+              /* Remove underline from all links */
+            }
+
+            .elementor-icon-list-icon {
+              color: white;
+              /* Set icon color to white */
+              font-size: 24px;
+              /* Adjust icon size as needed */
+              margin-right: 10px;
+              /* Optional: Adjust spacing between icon and text */
+            }
+
+            .elementor-icon-list-text {
+              color: white;
+              /* Set text color to white */
+            }
+          </style>
+
+          <div class="elementor-icon-list-items elementor-inline-items">
+            <div class="elementor-icon-list-item elementor-inline-item">
+              <a href="https://www.instagram.com" target="_blank">
+                <span class="elementor-icon-list-icon bi bi-instagram"></span>
+                <span class="elementor-icon-list-text">Instagram</span>
+              </a>
+            </div>
+            <div class="elementor-icon-list-item elementor-inline-item">
+              <a href="http://twitter.com" target="_blank">
+                <span class="elementor-icon-list-icon bi bi-twitter"></span>
+                <span class="elementor-icon-list-text">Twitter</span>
+              </a>
+            </div>
+            <div class="elementor-icon-list-item elementor-inline-item">
+              <a href="https://www.youtube.com/@donboscoschoolparkcircus1452/featured" target="_blank">
+                <span class="elementor-icon-list-icon bi bi-youtube"></span>
+                <span class="elementor-icon-list-text">Youtube</span>
+              </a>
+            </div>
+            <!-- Add more social media icons as needed -->
+          </div>
+
+
+
+        </div>
+
+
+        <div class="col-lg-3 col-md-6" style="margin-top: 10px;">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe width="240" height="215" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=Don+Bosco+School+Park+Circus&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              <a href="https://online.stopwatch-timer.net/">timer for kids</a><br>
+              <a href="https://textcaseconvert.com/"></a><br>
+            </div>
+          </div>
+        </div>
+        <style>
+          .mapouter {
+            position: relative;
+            text-align: right;
+            height: 215px;
+            width: 240px;
+            border-radius: 10px;
+            /* Adjust the border-radius as per your preference */
+            overflow: hidden;
+            /* Ensure content within does not overflow rounded corners */
+          }
+
+          .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 215px;
+            width: 240px;
+            border-radius: 10px;
+            /* Adjust the border-radius to match .mapouter */
+          }
+        </style>
+
+        <style>
+          .mapouter {
+            position: relative;
+            text-align: right;
+            height: 215px;
+            width: 240px;
+            border-radius: 10px;
+            /* Rounded corners */
+            overflow: hidden;
+            /* Ensure content within does not overflow rounded corners */
+          }
+
+          .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 215px;
+            width: 240px;
+            border-radius: 10px;
+            /* Rounded corners */
+          }
+        </style>
+        
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

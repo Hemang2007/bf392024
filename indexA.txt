@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Events</title>
+    <style>
+        body {
+            background-image: url("bg.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        @media (max-width: 989px) {
+            body {
+                overflow: scroll;
+            }
+        }
+
+        .img-fluid {
+            z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+        }
+
+        .btn {
+            z-index:-999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+        }
+
+        .something { 
+            width: 50px; 
+            height: 50px; 
+            display: block; 
+        }
+
+        .btn-container {
+            position: relative;
+            height: 100%;
+        }
+
+        .btn-container img {
+            padding: 25%;
+        }
+
+        .btn-container .something {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        @keyframes rot_cw { 
+            0% { 
+                transform: rotate(0deg) translateX(300px) rotate(0deg); 
+            } 
+            100% { 
+                transform: rotate(360deg) translateX(300px) rotate(-360deg); 
+            } 
+        }
+
+        @keyframes rot_ccw { 
+            0% { 
+                transform: rotate(0deg) translateX(300px) rotate(0deg); 
+            } 
+            100% { 
+                transform: rotate(-360deg) translateX(300px) rotate(360deg); 
+            } 
+        }
+
+        .btn-cw {
+            animation: rot_cw 20s infinite linear;
+        }
+
+        .btn-ccw {
+            animation: rot_ccw 20s infinite linear;
+        }
+
+        .something {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.btn-cw:hover,
+.btn-container:hover .btn-cw {
+    animation-play-state: paused;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div style="height: 100vh;" class="row">
+        <div class="container col-lg-6 btn-container">
+            <img src="clocklogo1.gif" class="img-fluid mx-auto rounded-circle">
+            <div class="something btn-cw" style="animation-delay: calc(1 * 1.67s);"><button class="btn btn-dark" id="btn-1" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Beat</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(2 * 1.67s);"><button class="btn btn-dark" id="btn-2" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 2</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(3 * 1.67s);"><button class="btn btn-dark" id="btn-3" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 3</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(4 * 1.67s);"><button class="btn btn-dark" id="btn-4" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 4</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(5 * 1.67s);"><button class="btn btn-dark" id="btn-5" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 5</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(6 * 1.67s);"><button class="btn btn-dark" id="btn-6" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 6</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(7 * 1.67s);"><button class="btn btn-dark" id="btn-7" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 7</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(8 * 1.67s);"><button class="btn btn-dark" id="btn-8" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 8</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(9 * 1.67s);"><button class="btn btn-dark" id="btn-9" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 9</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(10 * 1.67s);"><button class="btn btn-dark" id="btn-10" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 10</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(11 * 1.67s);"><button class="btn btn-dark" id="btn-11" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 11</button></div>
+            <div class="something btn-cw" style="animation-delay: calc(12 * 1.67s);"><button class="btn btn-dark" id="btn-12" onclick="document.location='eventsseppg/beat.html'" type="button" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top" title="AUXI" data-bs-content="This is the content of the Top Popover.">Schedule 12</button></div>
+        </div>
+        <div class="container col-lg-6 btn-container">
+            <img src="clocklogo2.gif" class="img-fluid mx-auto d-block rounded-circle">
+            <div class="something btn-ccw" style="animation-delay: calc(1 * 1.67s);"><button class="btn btn-dark" id="btn-13" onclick="document.location='eventsseppg/beat.html'">Schedule 1</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(2 * 1.67s);"><button class="btn btn-dark" id="btn-14" onclick="document.location='eventsseppg/beat.html'">Schedule 2</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(3 * 1.67s);"><button class="btn btn-dark" id="btn-15" onclick="document.location='eventsseppg/beat.html'">Schedule 3</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(4 * 1.67s);"><button class="btn btn-dark" id="btn-16" onclick="document.location='eventsseppg/beat.html'">Schedule 4</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(5 * 1.67s);"><button class="btn btn-dark" id="btn-17" onclick="document.location='eventsseppg/beat.html'">Schedule 5</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(6 * 1.67s);"><button class="btn btn-dark" id="btn-18" onclick="document.location='eventsseppg/beat.html'">Schedule 6</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(7 * 1.67s);"><button class="btn btn-dark" id="btn-19" onclick="document.location='eventsseppg/beat.html'">Schedule 7</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(8 * 1.67s);"><button class="btn btn-dark" id="btn-20" onclick="document.location='eventsseppg/beat.html'">Schedule 8</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(9 * 1.67s);"><button class="btn btn-dark" id="btn-21" onclick="document.location='eventsseppg/beat.html'">Schedule 9</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(10 * 1.67s);"><button class="btn btn-dark" id="btn-22" onclick="document.location='eventsseppg/beat.html'">Schedule 10</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(11 * 1.67s);"><button class="btn btn-dark" id="btn-23" onclick="document.location='eventsseppg/beat.html'">Schedule 11</button></div>
+            <div class="something btn-ccw" style="animation-delay: calc(12 * 1.67s);"><button class="btn btn-dark" id="btn-24" onclick="document.location='eventsseppg/beat.html'">Schedule 12</button></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll('.something');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('mouseover', function() {
+            // Pause all animations
+            pauseAnimations();
+        });
+
+        button.addEventListener('mouseout', function() {
+            // Resume all animations
+            resumeAnimations();
+        });
+    });
+
+    function pauseAnimations() {
+        var animatedElements = document.querySelectorAll('[id^="btn-"]');
+        animatedElements.forEach(function(element) {
+            element.style.animationPlayState = 'paused';
+        });
+    }
+
+    function resumeAnimations() {
+        var animatedElements = document.querySelectorAll('[id^="btn-"]');
+        animatedElements.forEach(function(element) {
+            element.style.animationPlayState = 'running';
+        });
+    }
+});
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #btn-1 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -54%;
+    }
+/*
+    #btn-2 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+        }
+
+    #btn-3 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-4 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-5 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }    
+
+    #btn-6 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-7 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+  
+
+    #btn-8 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.7%;
+    }
+    
+    #btn-9 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+
+
+    #btn-10 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-11 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+
+    #btn-12 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -7%;
+    }
+
+    #btn-13 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -54%;
+    }
+
+    #btn-14 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-15 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+    #btn-16 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-17 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+    
+    #btn-18 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-19 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+    
+    #btn-20 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.7%;
+    }
+ 
+    #btn-21 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-22 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-23 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -6.6%;
+    }
+
+    #btn-24 {
+        margin-left: 43.9%; 
+        margin-right: auto; 
+        margin-top: -7%;
+    }*/
